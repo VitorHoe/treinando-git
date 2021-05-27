@@ -6,21 +6,30 @@
     <title>Trabalhando Git</title>
 </head>
 <body>
-    <script>
+    <script>      
       function cadastrarNotas () {
-        let notas = []for (let i = 0; i < 3; i++) {
-          notas[i] = +prompt(`Digite a ${i + 1} nota`)
+        let notas = []
+        
+        for (let i = 0; i < 3; i++) {
+          notas[i] = +prompt(`Digite a ${i + 1}ª nota`)
         }
-        return notas;
+        return notas
       }
       
       function calcularMedia(notas) {
         let soma = 0
-        for (let i = 0; i < notas.lenght; i++){
-          soma += notas[i]
+        
+        for (let nota of notas){
+          soma += nota
         } 
-        return soma / (notas.lenght - 1)
+        return soma / notas.length
       }
+      
+      let mostrarMedia = media => alert(`Notas digitadas: ${notas}\nMédia das notas: ${media.toFixed(2)}`)
+        
+      let notas = cadastrarNotas();
+      let media = calcularMedia(notas);
+      mostrarMedia(media);
     </script>
 </body>
 </html>
