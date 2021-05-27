@@ -7,13 +7,20 @@
 </head>
 <body>
     <script>
-        function calcularMedia(notas) {
-            let soma = 0
-            for (let i = 0; i < notas.lenght; i++){
-                soma += notas[i]
-            } return soma/notas.lenght
+      function cadastrarNotas () {
+        let notas = []for (let i = 0; i < 3; i++) {
+          notas[i] = +prompt(`Digite a ${i + 1} nota`)
         }
-
+        return notas;
+      }
+      
+      function calcularMedia(notas) {
+        let soma = 0
+        for (let i = 0; i < notas.lenght; i++){
+          soma += notas[i]
+        } 
+        return soma / (notas.lenght - 1)
+      }
     </script>
 </body>
 </html>
